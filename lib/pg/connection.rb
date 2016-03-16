@@ -220,7 +220,7 @@ class PG::Connection
 	###
 	### See also #conndefaults
 	def self.conndefaults_hash
-		return self.conndefaults.each_with_object({}) do |info, hash|
+		return self.class.conndefaults.each_with_object({}) do |info, hash|
 			hash[ info[:keyword].to_sym ] = info[:val]
 		end
 	end
