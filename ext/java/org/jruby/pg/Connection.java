@@ -201,7 +201,7 @@ public class Connection extends RubyObject {
   }
 
   @JRubyMethod(meta = true)
-  public static IRubyObject connectdefaults(ThreadContext context, IRubyObject self) {
+  public static IRubyObject conndefaults(ThreadContext context, IRubyObject self) {
     return context.nil;
   }
 

@@ -50,7 +50,7 @@ class PG::Connection
 			when URI, URI.regexp
 				uri = URI(args.first)
 				options.merge!( Hash[URI.decode_www_form( uri.query )] ) if uri.query
-			when /=/
+			when '/=/'
 				# Option string style
 				option_string = args.first.to_s
 			else
@@ -220,7 +220,7 @@ class PG::Connection
 	###
 	### See also #conndefaults
 	def self.conndefaults_hash
-		return self.class.conndefaults.each_with_object({}) do |info, hash|
+		return self.conndefaults.conndefaults.each_with_object({}) do |info, hash|
 			hash[ info[:keyword].to_sym ] = info[:val]
 		end
 	end
